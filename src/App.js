@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+
+import Navbar from './components/navbar'
+import Home from './components/home'
+import Scene from './components/scene'
+import Relax from './components/relax'
+import Ocean from './components/ocean'
+import Progress from './components/progress'
+import Profile from './components/profile'
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path ="/home" element = {<Home/>} />
+        <Route path ="/scene" element = {<Scene/>} />
+        <Route path ="/relax" element = {<Relax/>} />
+        <Route path ="/progress"  element = {<Progress/>} />
+        <Route path ="/profile"  element = {<Profile/>} />
+        <Route path="/ocean" element={<Ocean/>} />
+      </Routes>
+      
+    </Router>
   );
 }
 
